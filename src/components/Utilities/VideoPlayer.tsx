@@ -1,50 +1,52 @@
 "use client";
-import { XSquare } from "@phosphor-icons/react";
-import { useState } from "react";
 import YouTube from "react-youtube";
 
 const VideoPlayer = ({ youTubeId }: any) => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const handleVideoPLayer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
 
   const option = {
-    width: "300",
-    height: "250",
+    width: "370",
+    height: "350",
   };
 
-  const Player = () => {
+  const LayarKecil = () => {
     return (
-      <div className="fixed bottom-2 right-2">
-        <button
-          className="text-color-primary float-right bg-color-dark"
-          onClick={handleVideoPLayer}
-        >
-          <XSquare size={32} />
-        </button>
+      <div className="block md:hidden">
+      <div className="flex flex-col items-center">
+        <h2 className="text-color-primary font-bold my-4">Video Trailer.</h2>
+        <div className="aspect-video border-4 border-color-accent rounded-lg">
         <YouTube
           videoId={youTubeId}
           onReady={(event) => event.target.pauseVideo()}
           opts={option}
           onError={() => alert("video is broken, please try another!")}
         />
+        </div>
+      </div>
       </div>
     );
   };
-
-  const ReOpen = () => {
+  const LayarLebar = () => {
     return (
-      <div className="fixed bottom-5 right-5 w-32 hover:bg-color-accent bg-color-primary transition-all text-color-dark text-center rounded text-base shadow-xl">
-        <button onClick={handleVideoPLayer} className="p-2">
-          Tonton Trailer.
-        </button>
+      <div className="hidden md:block">
+      <div className="flex flex-col items-center">
+        <h2 className="text-color-primary font-bold my-4">Video Trailer.</h2>
+        <div className="aspect-video border-4 border-color-accent rounded-lg">
+        <YouTube
+          videoId={youTubeId}
+          onReady={(event) => event.target.pauseVideo()}
+          onError={() => alert("video is broken, please try another!")}
+        />
+        </div>
+      </div>
       </div>
     );
   };
 
-  return isOpen ? <Player /> : <ReOpen />;
+  return (
+    <div>
+      <LayarKecil />
+      <LayarLebar />
+    </div>)
 };
 
 export default VideoPlayer;

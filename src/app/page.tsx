@@ -1,9 +1,18 @@
 import Header from "@/components/AnimeList/Header";
 import AnimeList from "../components/AnimeList/AnimeList";
-import { AnimeResponse } from "./services/api-services";
+import {
+  AnimeResponse,
+  getNestedAnimeResponse,
+  reproduce,
+} from "../services/api-services";
 
 const Home = async () => {
   const TopAnime = await AnimeResponse("top/anime", "limit=8");
+  let RecomendedAnime = await getNestedAnimeResponse(
+    "recommendations/anime",
+    "entry"
+  );
+  RecomendedAnime = reproduce(RecomendedAnime, 8)
 
   return (
     <main>
@@ -14,6 +23,10 @@ const Home = async () => {
           linkHref="/populer"
         ></Header>
         <AnimeList api={TopAnime}></AnimeList>
+      </section>
+      <section>
+        <Header title="Rekomendasi"></Header>
+        <AnimeList api={RecomendedAnime}></AnimeList>
       </section>
     </main>
   );

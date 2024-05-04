@@ -1,4 +1,4 @@
-import { AnimeResponse } from "@/app/services/api-services";
+import { AnimeResponse } from "@/services/api-services";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import Image from "next/image";
 
@@ -12,7 +12,14 @@ const page = async ({ params: { id } }: any) => {
           {anime.data.title} - {anime.data.year}
         </h3>
       </div>
-
+      <div className="px-4 py-1">
+        <h3 className="text-color-primary text-base">
+          {anime.data.background}
+        </h3>
+      </div>
+      <div>
+        <VideoPlayer youTubeId={anime.data.trailer.youtube_id}/>
+      </div>
 
       <div className="p-4 flex gap-2 text-color-primary overflow-x-auto">
         <div className="w-36 flex flex-col justify-center items-center rounded border border-color-primary p-2">
@@ -42,9 +49,6 @@ const page = async ({ params: { id } }: any) => {
           className="w-full rounded object-cover"
         />
         <p className="text-justify text-lg">{anime.data.synopsis}</p>
-      </div>
-      <div>
-        <VideoPlayer youTubeId={anime.data.trailer.youtube_id}/>
       </div>
     </>
   );
