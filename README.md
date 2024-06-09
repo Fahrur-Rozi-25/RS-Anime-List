@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Anime-List
 
-## Getting Started
+![Anime-List Logo]()
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Anime-List is a comprehensive application that allows users to keep track of their favorite anime series and movies. Users can add new titles, rate them, and share their lists with friends. The project aims to provide a simple yet powerful interface for anime enthusiasts to manage their watchlists efficiently.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Add Anime**: Easily add new anime titles to your list.
+- **Rate Anime**: Rate and review anime you've watched.
+- **Share Lists**: Share your anime list with friends.
+- **Search Functionality**: Quickly find anime titles in your list.
+- **User Authentication**: Secure login and registration system.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+To get started with Anime-List, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/anime-list.git
+    cd anime-list
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Set up the database:**
+    Make sure you have [MongoDB](https://www.mongodb.com/) installed and running. Create a `.env` file in the root directory and add your MongoDB URI:
+    ```env
+    MONGODB_URI=your_mongodb_uri
+    ```
 
-## Deploy on Vercel
+4. **Run the application:**
+    ```bash
+    npm start
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Open your browser:**
+    Visit `http://localhost:3000` to view the application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+1. **Sign up or log in** to your account.
+2. **Add anime titles** by clicking on the "Add Anime" button.
+3. **Rate and review** anime titles from your list.
+4. **Search** for anime using the search bar.
+5. **Share your list** with friends by sending them the link to your profile.
+
+## Screenshots
+
+![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Screenshot)
+*Anime-List Dashboard*
+
+![Add Anime](https://via.placeholder.com/800x400?text=Add+Anime+Screenshot)
+*Adding a new anime title*
+
+## Contributing
+
+We welcome contributions from the community! To contribute to Anime-List, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Make your changes and commit them: `git commit -m 'Add new feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Submit a pull request.
+
+Please make sure your code follows our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contributing Guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out:
+
+- **Email**: support@anime-list.com
+- **Twitter**: [@AnimeListApp](https://twitter.com/AnimeListApp)
+- **Discord**: [Anime-List Community](https://discord.com/invite/animelist)
+
+---
+
+*Happy Watching!*
+
+![Footer Image](https://via.placeholder.com/800x200?text=Anime+Footer)
